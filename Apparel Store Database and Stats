@@ -1,0 +1,35 @@
+--Create an apparel store database
+
+CREATE TABLE apparel (id INTEGER PRIMARY KEY, name TEXT, wholesale_cost INTEGER, price INTEGER, profit INTEGER);
+INSERT INTO apparel VALUES (1, 'T-Shirts', 1.00, 5.00, 4.00);
+INSERT INTO apparel VALUES (2, 'Undershirts', .50, 3.00, 2.50);
+INSERT INTO apparel VALUES (3, 'Shorts', 2.00, 6.00, 4.00);
+INSERT INTO apparel VALUES (4, 'Jeans', 6.00, 18.00, 12.00);
+INSERT INTO apparel VALUES (5, 'Socks', .25, 2.00, 1.75); 
+INSERT INTO apparel VALUES (6, 'Bras', 4.25, 22.50, 18.25);
+INSERT INTO apparel VALUES (7, 'Joggers', 7.00, 25.00, 18.00);
+INSERT INTO apparel VALUES (8, 'Panties', 1.10, 6.25, 5.15); 
+INSERT INTO apparel VALUES (9, 'Boxers', .90, 4.99, 4.09); 
+INSERT INTO apparel VALUES (10, 'Hoodie', 12.00, 32.00, 20.00);
+INSERT INTO apparel VALUES (11, 'Sweater', 9.00, 18.00, 9.00);
+INSERT INTO apparel VALUES (12, 'Leggings',1.75, 9.99, 8.24);
+INSERT INTO apparel VALUES (13, 'Jackets', 8.00, 45.00, 37.00); 
+INSERT INTO apparel VALUES (14, 'Sports Bra', 2.12, 18.99, 16.87);
+INSERT INTO apparel VALUES (15, 'Pants', 6.72, 15.75, 9.03);
+
+--display the database ordered by price 
+SELECT * FROM apparel
+ORDER BY price desc; 
+
+
+--display the avg profit of items costing more than $2 
+SELECT AVG(profit)
+FROM apparel
+where wholesale_cost >2.00;
+
+
+--display the 3 most expensive wholesale items 
+SELECT name, wholesale_cost
+FROM apparel
+order by wholesale_cost desc
+limit 3; 
